@@ -205,8 +205,8 @@ textarea, input {
     max-width: 1280px;
     margin: auto;
     text-align: right;
-    height: 32px;
-    line-height: 32px;
+    height: 48px;
+    line-height: 30px;
     position: relative;
 }
 
@@ -215,6 +215,12 @@ textarea, input {
 #headerContent a:hover,
 #headerContent a:active {
     color: #fff;
+}
+
+#headerLogo {
+    position: relative;
+    top: 2px;
+    left: 8px; 
 }
 
 #footer
@@ -234,11 +240,6 @@ textarea, input {
     text-align: center;
     height: 32px;
     line-height: 32px;
-}
-
-#genericHeading
-{
-    margin-top: 13px;
 }
 
 .feedback {
@@ -347,6 +348,7 @@ textarea, input {
     height: 100%;
 }
 
+
 #roomHeader {
     margin: auto;
     padding-left: 20px;
@@ -450,8 +452,8 @@ textarea, input {
 }
 
 #roomName {
-    font-size: 16px;
-    text-align: right;
+    font-size: 18px;
+    text-align: left;
 }
 
 #roomTopic {
@@ -464,9 +466,11 @@ textarea, input {
 }
 
 .roomNameSection, .roomTopicSection {
-    text-align: right;
+    text-align: left;
     float: right;
     width: 100%;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 .roomNameSetNew, .roomTopicSetNew {
@@ -474,7 +478,7 @@ textarea, input {
 }
 
 .roomHeaderInfo {
-    text-align: right;
+    text-align: left;
     float: right;
     margin-top: 0px;
     margin-right: 30px;

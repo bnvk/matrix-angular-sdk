@@ -88,6 +88,12 @@
         </div>
         <!-- Do not show buttons on the login page -->
         <div id="headerContent" ng-hide="'/login' == location || '/register' == location">
+            <div id="headerLogo" class="pull-left">
+                <a href ng-click="goToPage('/')">
+                    <img src="img/logo-smaller-white.png">
+                </a>
+            </div>
+
             <div id="callBar" ng-show="currentCall">
                 <img id="callPeerImage" ng-show="currentCall.userProfile.avatar_url" ng-src="{{ currentCall.userProfile.avatar_url }}" />
                 <img class="callIcon" src="img/green_phone.png" ng-show="!!currentCall" ng-class="currentCall.state" />
