@@ -23,7 +23,7 @@
                     </form>
                 </div>
 
-                <button id="user-save-button"
+                <button class="btn btn-primary" id="user-save-button"
                         ng-disabled="(profile.displayName === profileOnServer.displayName) && (profile.avatarUrl === profileOnServer.avatarUrl)"
                         ng-click="saveProfile()">Update profile</button>
                 
@@ -33,7 +33,7 @@
                     <p>Linking an email address to your account lets users who know your email address find you on Matrix.</p>
                     <form>
                         <input size="40" ng-model="linkedEmails.linkNewEmail" ng-enter="linkEmail(linkedEmails.linkNewEmail)" />
-                        <button ng-disabled="!linkedEmails.linkNewEmail" ng-click="linkEmail(linkedEmails.linkNewEmail)">
+                        <button class="btn btn-primary" ng-disabled="!linkedEmails.linkNewEmail" ng-click="linkEmail(linkedEmails.linkNewEmail)">
                             Link Email
                         </button>
                         {{ emailFeedback }}
@@ -42,7 +42,7 @@
                         Enter validation token for {{ linkedEmails.emailBeingAuthed }}:
                         <br />
                         <input size="20" ng-model="linkedEmails.emailCode" ng-enter="submitEmailCode(linkedEmails.emailCode)" />
-                        <button ng-disabled="!linkedEmails.emailCode || !linkedEmails.linkNewEmail" ng-click="submitEmailCode(linkedEmails.emailCode)">
+                        <button class="btn btn-primary" ng-disabled="!linkedEmails.emailCode || !linkedEmails.linkNewEmail" ng-click="submitEmailCode(linkedEmails.emailCode)">
                             Submit Code
                         </button>   
                     </form>
@@ -56,7 +56,7 @@
             <tab heading="Notifications">
                 <h2>Notification Settings</h2>
                 <div class="section pushmaster" ng-class="{pushdisabled: settings.push_master_rule.enabled}" ng-show="settings.push_master_rule != undefined">
-                    <button ng-click="settings.push_master_rule.enabled = !settings.push_master_rule.enabled; updateRuleEnabled(settings.push_master_rule)" style="font-size: 12pt">{{settings.push_master_rule.enabled ? 'Enable notifications' : 'Disable all notifications'}}</button>                    
+                    <button class="btn btn-primary" ng-click="settings.push_master_rule.enabled = !settings.push_master_rule.enabled; updateRuleEnabled(settings.push_master_rule)" style="font-size: 12pt">{{settings.push_master_rule.enabled ? 'Enable notifications' : 'Disable all notifications'}}</button>                    
                     <img src="img/spinner.gif" ng-class="{invisible: !settings.push_master_rule.inprogress}" />
                     <div ng-if="settings.push_master_rule.enabled">
                         <p>All notifications are currently disabled for all devices.</p>
@@ -74,7 +74,7 @@
                                     <p>Desktop notifications are muted: notifications will not be displayed from this website</p>
                                 </div>
                                 <p>
-                                    <button ng-click="toggleMute()" style="font-size: 12pt">
+                                    <button class="btn btn-primary" ng-click="toggleMute()" style="font-size: 12pt">
                                         {{config.muteNotifications ? "Unmute desktop notifications" : "Mute desktop notifications"}}
                                     </button>
                                 </p>
@@ -89,7 +89,7 @@
                         </div>
                         <div ng-switch-when="default">
                             <p>This will enabled notifications from this web client to your desktop.</p>
-                            <button ng-click="requestNotifications()" style="font-size: 14pt">Enable desktop notifications</button>
+                            <button class="btn btn-primary" ng-click="requestNotifications()" style="font-size: 14pt">Enable desktop notifications</button>
                         </div>
                         <div ng-switch-default="">
                             <p>Sorry, your browser does not support notifications.</p>
@@ -300,12 +300,12 @@
                         You currently have {{payment.credit}} of credit available.
                     </p>
                     <p>
-                        <button ng-click='getCredit()'>Add Credit</button>
+                        <button class="btn btn-primary" ng-click='getCredit()'>Add Credit</button>
                     </p>
                     -->
                     <p>It is possible to send and receive SMS via Matrix using the <a href="http://www.openmarket.com/matrix">OpenMarket Matrix Gateway</a> by messaging Matrix IDs resembling <code>@+447700900123:matrix.openmarket.com</code>.  During beta testing, messages incur no cost (with a per-user fair usage limit), but you must link your account to PayPal as a security measure.</p>
                     <p>
-                        <button ng-click='getCredit()'>Link PayPal account</button>
+                        <button class="btn btn-primary" ng-click='getCredit()'>Link PayPal account</button>
                     </p>
                 </div>
             </tab>

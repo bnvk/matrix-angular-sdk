@@ -139,11 +139,13 @@
                 </audio>
             </div>
 
-            <a href id="headerUserId" ng-click='goToUserPage(user_id)'>{{ user_id }}</a>
-            &nbsp;
-            <button ng-click='goToPage("/")'>Home</button>
-            <button ng-click='goToPage("settings")'>Settings</button>
-            <button ng-click="logout()">Log out</button>
+            <div id="headerNav">
+                <a href id="headerUserId" ng-click='goToUserPage(user_id)'>{{ user_id }}</a>
+                &nbsp;
+                <button class="btn btn-default btn-xs" ng-click='goToPage("/")'>Home</button>
+                <button class="btn btn-default btn-xs" ng-click='goToPage("settings")'>Settings</button>
+                <button class="btn btn-default btn-xs" ng-click="logout()">Log out</button>
+            </div>
         </div>
     </div>
 
