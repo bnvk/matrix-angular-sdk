@@ -1,0 +1,464 @@
+/*** Room page ***/
+
+.room { 
+}
+
+#sidebar-resizer {
+    position: absolute;
+    background-color: #fff;
+    height: 100%;
+    left: 320px;
+    width: 10px;
+    border-right: 1px solid #ccc;
+    cursor: e-resize;
+}
+
+#roomPage {
+    position: absolute;
+    top: 120px;
+    bottom: 70px;
+    left: 20px;
+    right: 20px;
+}
+
+#roomWrapper {
+    position: relative;
+    margin: auto;
+    max-width: 1280px;
+    height: 100%;
+}
+
+
+#roomHeader {
+    margin: auto;
+    padding: 50px 20px 0px 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;  
+    max-width: 1280px;
+}
+
+#controlPanel {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: #f8f8f8;
+    border-top: #aaa 1px solid;
+}
+
+#controls {
+    max-width: 1280px;
+    padding: 12px;
+    padding-right: 42px;
+    margin: auto;
+    position: relative;
+}
+
+#buttonsCell {
+    width: 150px;
+}
+
+#inputBarTable {
+    width: 100%;
+}
+
+#inputBarTable tr td {
+    padding: 1px 4px;
+}
+
+#mainInput {
+    width: 100%;
+    padding: 5px;
+    resize: vertical;
+}
+
+#attachButton {
+    position: absolute;
+    cursor: pointer;
+    margin-top: 3px;
+    right: 0px;
+    background: url('../img/attach.png');
+    width: 25px;
+    height: 25px;
+    border: 0px;
+}
+
+.blink {
+    background-color: #faa;
+}
+
+.roomHighlight {
+    font-weight: bold;
+    background-color: #ffd;
+}
+
+.publicRoomSpinner {
+    max-width: 480px;
+    padding: 20px;
+}
+
+ol.publicRooms {
+    width: 100%;
+    list-style: none;
+    margin-left: 0px;
+    padding: 0px;
+    vertical-align: text-top;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+li.publicRoomEntry {
+    padding: 5px 8px;
+}
+
+li.publicRoomEntry:hover {
+    background: #d9d9d9;
+}
+
+a.publicRoomEntry {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+span.publicRoomJoinedUsers {
+    width: 5em;
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+}
+
+span.publicRoomTopic {
+    color: #888;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-bottom: 5px;
+}
+
+#roomTopic {
+    font-size: 13px;
+    text-align: right;
+}
+
+.roomNameInput, .roomTopicInput {
+    width: 100%;
+}
+
+.roomNameSection {
+    text-align: left;
+    width: 100%;
+}
+
+
+//  .roomTopicSection
+
+.roomNameSetNew, .roomTopicSetNew {
+    float: right;
+}
+
+#roomHeaderInfo {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+}
+
+/*** Room Info Dialog ***/
+
+.room-info {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.room-info-event {
+    border-bottom: 1pt solid black;
+}
+
+.room-info-event-meta {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.room-info-event-content {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.redact-button {
+    float: left
+}
+
+.room-info-textarea-content {
+    height: auto;
+    width: 100%;
+    resize: vertical;
+}
+
+/*** Control Buttons ***/
+
+#roomControlButtons {
+    width: 125px;
+    border: 1px solid red;
+    padding-bottom: 6px;
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+}
+
+.controlButton {
+    cursor: pointer;
+    border: 0px;
+    width: 30px;
+    height: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+
+
+/*** Message table ***/
+
+#messageTableWrapper {
+    height: 100%;
+    margin-right: 140px;
+    overflow-y: auto;
+    width: auto;
+}
+
+#messageTable {
+    margin: auto;
+    max-width: 1280px;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+        
+#messageTable td {
+    padding: 0px;
+}
+
+.leftBlock {
+    width: 7em;
+    word-wrap: break-word;
+    vertical-align: top;
+    background-color: #fff;
+    color: #aaa;
+    font-weight: medium;
+    font-size: 12px;
+    text-align: right;
+}
+
+.rightBlock {
+    width: 75px;
+    color: #888;
+    line-height: 0;
+    vertical-align: top;
+}        
+
+.timestamp {
+	font-weight: normal;
+    font-size: 10px;
+    color: #ccc;
+    height: 13px;
+    margin-top: 4px;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+}
+
+.sender {
+    padding-left: 1em;
+	color: #a9a9a9;
+    font-size: 13px;
+	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.avatar {
+    width: 48px;
+    text-align: right;
+    vertical-align: top;
+    line-height: 0;
+}
+
+.avatarImage {
+    position: relative;
+    top: 5px;
+    object-fit: cover;
+    border-radius: 32px;
+    margin-top: 4px;
+}
+        
+.emote {
+    background-color: transparent ! important;
+    border: 0px ! important;
+}
+
+.membership {
+    background-color: transparent ! important;
+    border: 0px ! important;
+}
+
+.file_thumbnail {
+    float: left;
+    margin-right: 10px;
+}
+
+.image {
+    display: block;
+    max-width:320px;
+    max-height:320px;
+    width: auto;
+    height: auto;
+}
+
+.messageImage {
+    max-width:320px;
+    max-height:320px;
+    width: auto;
+    height: auto;
+}
+
+.messageImageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 32px;
+    width: 32px;
+}
+
+.text {
+    vertical-align: top;
+}
+
+.bubble {
+    display: inline-block;
+    max-width: 90%;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+.bubble img {
+    max-width: 100%;
+    max-height: auto;
+}
+
+.differentUser .msg {
+    padding-top: 14px ! important;
+}
+
+.msg_meta {
+    font-style: italic;
+	color: #a9a9a9;
+}
+
+.mine .text .bubble {
+    text-align: left ! important;
+}
+
+.bubble .message {
+    /* Wrap words and break lines on CR+LF */
+    white-space: pre-wrap;
+}
+.bubble .messagePending {
+    opacity: 0.3
+}
+.messageUnSent {
+    color: #F00;
+}
+
+.messageBing {
+    color: #00F;
+}
+
+.messageNotice {
+    color: #555;
+}
+
+.avatarNotice {
+    opacity: 0.5;
+}
+
+
+/*** Participant list ***/
+
+#usersTableWrapper {
+    float: right;
+    clear: right;
+    width: 101px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+#room-fullscreen-image {
+    position: absolute;
+    top: 0px;
+    height: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#room-fullscreen-image img {
+    max-width: 90%;
+    max-height: 90%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);    
+}
+
+/* Do not show users count in the recents fragment displayed on the room page */
+#roomPage .recentsRoomSummaryUsersCount {
+    width: 0em;
+}
+
+/*** Recents in the room page ***/
+
+#roomSidebarTitle {
+    width: 320px;
+
+    padding-right: 10px;
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1; 
+}
+
+#roomRecentsTableWrapper {
+    float: left;
+    max-width: 320px;
+    padding-right: 10px;
+    margin-right: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+

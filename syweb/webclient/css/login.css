@@ -1,0 +1,62 @@
+/*** Login Pages ***/
+
+.loginWrapper {
+    text-align: center;
+}
+
+#recaptcha_area { 
+    margin: auto
+}
+
+#loginForm {
+    text-align: left;
+    padding: 1em;
+    margin-bottom: 40px;
+    display: inline-block;
+    
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.15);
+    
+    background-color: #f8f8f8;
+    border: 1px #ccc solid;
+}
+
+#loginForm input[type='radio'] {
+    margin-right: 1em;
+}
+
+#serverConfig {
+    text-align: center;
+}
+
+#serverConfig,
+#serverConfig input,
+#serverConfig button
+{
+    font-size: 10pt ! important;
+}
+
+.smallPrint {
+    color: #888;
+    font-size: 9pt ! important;
+    font-style: italic ! important;
+}
+
+#serverConfig label {
+    display: inline-block;
+    text-align: right;
+    margin-right: 0.5em;
+    width: 7em;   
+}
+
+#loginForm,
+#loginForm input,
+#loginForm button,
+#loginForm select {
+    font-size: 18px;
+}
