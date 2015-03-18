@@ -91,10 +91,10 @@
             </div>
 
             <div id="callBar" ng-show="currentCall">
-                <img id="callPeerImage" ng-show="currentCall.userProfile.avatar_url" ng-src="{{httpUri(currentCall.userProfile.avatar_url)}}" />
+                <img id="callPeerImage" ng-src="{{httpUri(currentCall.peerMember.event.content.avatar_url) || currentCall.peerMember.aevent.identicon()}}" />
                 <img class="callIcon" src="img/green_phone.png" ng-show="!!currentCall" ng-class="currentCall.state" />
                 <div id="callPeerNameAndState">
-                    <span id="callPeerName">{{ currentCall.userProfile.displayname }}</span>
+                    <span id="callPeerName">{{ currentCall.peerMember.id | mUserDisplayName: currentCall.room_id }}</span>
                     <br />
                     <span id="callState">
                         <span ng-show="currentCall.state == 'invite_sent'">Calling...</span>

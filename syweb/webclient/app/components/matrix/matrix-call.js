@@ -81,6 +81,7 @@ function MatrixCallFactory(webRtcService, matrixService, matrixPhoneService, mod
     MatrixCall.prototype.createPeerConnection = function() {
         var self = this;
         var pc = webRtcService.createPeerConnection(MatrixCall.turnServer);
+        if (!pc) return null;
         pc.ngoniceconnectionstatechange = function() { self.onIceConnectionStateChanged(); };
         pc.ngonsignalingstatechange = function() { self.onSignallingStateChanged(); };
         pc.ngonicecandidate = function(c) { self.gotLocalIceCandidate(c); };
@@ -130,15 +131,19 @@ function MatrixCallFactory(webRtcService, matrixService, matrixPhoneService, mod
 
     MatrixCall.prototype.initWithInvite = function(event) {
         this.msg = event.content;
+        this.peerMember = modelService.getMember(event.room_id, event.user_id);
         this.peerConn = this.createPeerConnection();
         var self = this;
-        this.peerConn.ngsetRemoteDescription(webRtcService.newRTCSessionDescription(this.msg.offer)).then(
-        function(s) {
-            self.onSetRemoteDescriptionSuccess(s);
-        },
-        function(e) {
-            self.onSetRemoteDescriptionError(e);
-        });
+        if (this.peerConn) {
+            this.peerConn.ngsetRemoteDescription(webRtcService.newRTCSessionDescription(this.msg.offer)).then(
+                function(s) {
+                    self.onSetRemoteDescriptionSuccess(s);
+                },
+                function(e) {
+                    self.onSetRemoteDescriptionError(e);
+                }
+            );
+        }
         this.state = 'ringing';
         this.direction = 'inbound';
 

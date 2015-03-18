@@ -268,8 +268,9 @@ function($timeout, $q, $rootScope, matrixService, modelService, mPresence, mUser
         if (!actionObj.notify) return false;
 
         if (actionObj.tweaks.highlight == undefined) {
-            // if it isn't specified, we highlight
-            return true;
+            // if it isn't specified, highlight if it's a content
+            // rule but otherwise not
+            return rule.kind == 'content';
         }
 
         return !!actionObj.tweaks.highlight;
@@ -480,6 +481,9 @@ function($timeout, $q, $rootScope, matrixService, modelService, mPresence, mUser
                     var avatarUrl;
                     if (member.event.content.avatar_url) {
                         avatarUrl = matrixService.getHttpUriForMxc(member.event.content.avatar_url);
+                    }
+                    if (!avatarUrl) {
+                        avatarUrl = member.aevent.identicon();
                     }
 
                     var displayname = mUserDisplayNameFilter(ev.user_id, ev.room_id);

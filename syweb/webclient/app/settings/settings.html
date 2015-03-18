@@ -123,7 +123,7 @@
                                 <tr ng-repeat="rule in settings.rules.content" ng-if="rule.rule_id[0] != '.'" ng-class="{disabledRule : !rule.enabled}">
                                     <td>
                                         <img width="16" height="16" ng-click="rule.enabled = !rule.enabled; updateRuleEnabled(rule)"
-                                            src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
+                                            ng-src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
                                         <img width="16" height="16" ng-click="deleteContentRule(rule)" ng-disabled="rule.inprogress"
                                             src="img/delete.png" alt="Delete"/>
                                         {{rule.pattern}}
@@ -160,7 +160,7 @@
                                 <tr ng-repeat="rule in settings.rules.room" ng-if="rule.rule_id[0] != '.'" ng-class="{disabledRule : !rule.enabled}">
                                     <td>
                                         <img width="16" height="16" ng-click="rule.enabled = !rule.enabled; updateRuleEnabled(rule)"
-                                            src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
+                                            ng-src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
                                         <img width="16" height="16" ng-click="deleteRoomRule(rule)" ng-disabled="rule.inprogress"
                                             src="img/delete.png" alt="Delete"/>
                                     Room: '{{rooms[rule.rule_id].room_id | mRoomName}}'
@@ -199,7 +199,7 @@
                                 <tr ng-repeat="rule in settings.rules.sender" ng-if="rule.rule_id[0] != '.'" ng-class="{disabledRule : !rule.enabled}">
                                     <td>    
                                         <img width="16" height="16" ng-click="rule.enabled = !rule.enabled; updateRuleEnabled(rule)"
-                                            src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
+                                            ng-src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
                                         <img width="16" height="16" ng-click="deleteSenderRule(rule)" ng-disabled="rule.inprogress"
                                             src="img/delete.png" alt="Delete"/>
                                         {{rule.rule_id}}
@@ -237,7 +237,7 @@
                                     ng-class="{disabledRule : !rule.enabled}">
                                     <td>
                                         <img width="16" height="16" ng-click="rule.enabled = !rule.enabled; updateRuleEnabled(rule)"
-                                            src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
+                                            ng-src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
                                         &nbsp;&nbsp;
                                         {{rule.description}}
                                     </td>
@@ -249,7 +249,7 @@
                                     ng-class="{disabledRule : !rule.enabled}">
                                     <td>
                                         <img width="16" height="16" ng-click="rule.enabled = !rule.enabled; updateRuleEnabled(rule)"
-                                            src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
+                                            ng-src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
                                         &nbsp;&nbsp;
                                         {{rule.description}}
                                     </td>
@@ -261,7 +261,7 @@
                                     ng-class="{disabledRule : !rule.enabled}">
                                     <td>
                                         <img width="16" height="16" ng-click="rule.enabled = !rule.enabled; updateRuleEnabled(rule)"
-                                            src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
+                                            ng-src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
                                         &nbsp;&nbsp;
                                         {{rule.description}}
                                     </td>
@@ -277,7 +277,7 @@
                                 <tr ng-repeat="rule in settings.default_rules.fallthrough" ng-class="{disabledRule : !rule.enabled}">
                                     <td>
                                         <img width="16" height="16" ng-click="rule.enabled = !rule.enabled; updateRuleEnabled(rule)"
-                                            src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
+                                            ng-src="{{rule.enabled ? 'img/pause.png' : 'img/play.png'}}" alt="{{rule.enabled ? 'Disable' : 'Enable'}}"/>
                                         &nbsp;&nbsp;
                                         {{rule.description}}
                                     </td>
