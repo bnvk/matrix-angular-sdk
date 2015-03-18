@@ -1,0 +1,54 @@
+/*** Settings ***/
+
+.pushmaster {
+    padding: 5px;
+}
+
+.pushmaster.pushdisabled {
+    background-color: #e55;
+}
+
+.section select,
+.section input {
+    margin-right: 6px ! important;
+}
+
+.pushsection {
+    transition: max-height linear 0.5s, opacity linear 0.5s;
+    max-height: 1500px;
+    overflow: hidden;
+}
+
+.pushsection.pushdisabled {
+    max-height: 0px;
+    opacity: 0;
+}
+
+.settingsgroup {
+    margin: 5px;
+/*
+    padding: 15px;
+    background-color: #eee;
+    border: 1px solid black;
+*/
+}
+
+li.disabledRule {
+    color: #bbb;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+/*** Seasonal ***/
+
+
+.controlButtonXmas {
+    cursor: pointer;
+    border: 0px;
+    width: 36px;
+    height: 46px;
+    margin-left: 3px;
+    margin-right: 3px;
+}

@@ -1,0 +1,172 @@
+
+.header {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    width: 100%;
+    height: 42px;
+}
+
+.badConnection {
+    background-color: #cd0000;
+}
+
+.goodConnection {
+    background-color: #333;
+}
+
+#headerBadConnection {
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    position: relative;
+    margin-left: 10px;
+}
+
+#callBar {
+    float: left;
+    height: 32px;
+    margin: auto;
+    text-align: right;
+    line-height: 16px;
+}
+
+.callIcon {
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 8px;
+    transition: transform linear 0.5s;
+    transition: -webkit-transform linear 0.5s;
+}
+
+.callIcon.ended {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    filter: hue-rotate(-90deg);
+    -webkit-filter: hue-rotate(-90deg);
+}
+
+#callPeerImage {
+    width: 32px;
+    height: 32px;
+    border: none;
+    float: left;
+}
+
+#callPeerNameAndState {
+    float: left;
+    margin-left: 4px;
+}
+
+#callState {
+    font-size: 60%;
+}
+
+#callPeerName {
+    font-size: 80%;
+}
+
+#videoBackground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.0);
+    pointer-events: none;
+    transition: background-color linear 500ms;
+}
+
+#videoBackground.large {
+    background-color: rgba(0,0,0,0.85);
+    pointer-events: auto;
+}
+
+#videoContainer {
+    position: relative;
+    top: 32px;
+    max-width: 1280px;
+    margin: auto;
+}
+
+#videoContainerPadding {
+    width: 1280px;
+}
+
+#localVideo {
+    position: absolute;
+    width: 128px;
+    height: 72px;
+    z-index: 1;
+    transition: left linear 500ms, top linear 500ms, width linear 500ms, height linear 500ms;
+}
+
+.mini #localVideo {
+    top: 0px;
+    left: 130px;
+}
+
+.large #localVideo {
+    top: 70px;
+    left: 20px;
+}
+
+.ended #localVideo {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+#remoteVideo {
+    position: relative;
+    height: auto;
+    transition: left linear 500ms, top linear 500ms, width linear 500ms, height linear 500ms;
+}
+
+.mini #remoteVideo {
+    left: 260px;
+    top: 0px;
+    width: 128px;
+}
+
+.large #remoteVideo {
+    left: 0px;
+    top: 50px;
+    width: 100%;
+}
+
+.ended #remoteVideo {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+#headerContent {
+    color: #ccc;
+    max-width: 1280px;
+    margin: auto;
+    text-align: right;
+    height: 42px;
+    line-height: 30px;
+    position: relative;
+}
+
+#headerContent a:link,
+#headerContent a:visited,
+#headerContent a:hover,
+#headerContent a:active {
+    color: #fff;
+}
+
+#headerLogo {
+    width: 65px;
+    position: relative;
+    top: 6px;
+    left: 10px; 
+}
+
+#headerNav {
+    float: right;
+    position: relative;
+    top: 5px;
+    right: 10px;
+}

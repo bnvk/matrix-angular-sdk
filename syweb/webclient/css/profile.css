@@ -1,0 +1,31 @@
+/*** Profile ***/
+
+.profile-avatar {
+    width: 160px;
+    height: 160px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.profile-avatar img {
+    border-radius: 80px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+}
+
+/*** User profile page ***/
+
+#user-displayname {
+    font-size: 24px;
+}
+
+#user-displayname-input {
+    width: 160px;
+    max-width: 155px;
+}
+
+#wrapper button {
+    font-size: 14px;
+}
