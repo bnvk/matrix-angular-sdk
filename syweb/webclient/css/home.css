@@ -1,0 +1,59 @@
+/*** Home - Public Rooms ***/
+
+.blink {
+    background-color: #faa;
+}
+
+.roomHighlight {
+    font-weight: bold;
+    background-color: #ffd;
+}
+
+.publicRoomSpinner {
+    max-width: 480px;
+    padding: 20px;
+}
+
+ol.publicRooms {
+    width: 100%;
+    list-style: none;
+    margin-left: 0px;
+    padding: 0px;
+    vertical-align: text-top;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+li.publicRoomEntry {
+    padding: 5px 8px;
+}
+
+li.publicRoomEntry:hover {
+    background: #d9d9d9;
+}
+
+a.publicRoomEntry {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+}
+
+span.publicRoomJoinedUsers {
+    width: 5em;
+    text-align: right;
+    font-size: 12px;
+    color: #888;
+}
+
+span.publicRoomTopic {
+    color: #888;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-bottom: 5px;
+}
