@@ -254,13 +254,14 @@
 }        
 
 .timestamp {
+    font-style: italic;
 	font-weight: normal;
-    font-size: 10px;
+    font-size: 12px;
+    line-height: 12px;
     color: #ccc;
-    height: 13px;
-    margin-top: 4px;
+    margin-left: 5px;
     transition-property: opacity;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
 }
 
 .sender {
