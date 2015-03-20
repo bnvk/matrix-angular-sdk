@@ -1,15 +1,20 @@
 <div ng-controller="HomeController" data-ng-init="onInit()">
 
     <script type="text/ng-template" id="createRoomTemplate.html">
+        <form>
+
         <div class="modal-header">
             Create New Room
         </div>
         <div class="modal-body">
-            <div>
-                <label><input type="checkbox" ng-model="newRoom.isPublic"> Public Room</label>
+            <div class="form-group">
+                <label>Room Name</label>
+                #<input class="form-control" size="32" ng-model="newRoom.alias" placeholder="Room Alias e.g. 'matrix' (optional)"/>:{{ config.homeserver.replace("http://", "").replace("https://", "") }}
             </div>
-            <div>
-                #<input size="32" ng-model="newRoom.alias" placeholder="Room Alias e.g. 'matrix' (optional)"/>:{{ config.homeserver.replace("http://", "").replace("https://", "") }}
+            <div class="checkbox">
+                <label for="createRoomPublic">
+                    <input id="createRoomPublic" type="checkbox" ng-model="newRoom.isPublic"> Public Room
+                </label>
             </div>
         </div>
         <div class="modal-footer">
@@ -17,6 +22,7 @@
                 Create
             </button>
         </div>
+        </form>
     </script>
 
     <div id="wrapper">
@@ -28,42 +34,48 @@
                 <div class="profile-avatar">
                     <img ng-src="{{ (null !== profile.avatarUrl) ? httpUri(profile.avatarUrl, 320, 320) : 'img/default-profile.png' }}"/>
                 </div>
-                <div id="user-ids">
-                    <h2 id="user-displayname">{{ profile.displayName }}</h2>
-                    <div>{{ config.user_id }}</div>
-                </div>
             </div>
             <div class="col-md-8">
-                <div class="home_controls">
-                    <form>
-                        <label for="newChat_user" style="width: 6em">
-                            Start chat:
-                        </label>
-                        <input id="newChat_user" size="40" ng-model="newChat.user" ng-enter="messageUser()" placeholder="e.g. @user:domain.com"/>
-                        <button class="btn btn-primary" ng-disabled="!newChat.user" ng-click="messageUser()">
-                            Start
-                        </button>
-                    </form>
-                </div>    
-                <div class="home_controls">
-                    <form>
-                        <label for="joinAlias_room_alias" style="width: 6em">
-                            Join room:
-                        </label>
-                        <input size="40" id="joinAlias_room_alias" ng-model="joinAlias.room_alias" ng-enter="joinAlias(joinAlias.room_alias)" placeholder="e.g. #foo:example.org"/>
-                        <button class="btn btn-primary" ng-disabled="!joinAlias.room_alias" ng-click="joinAlias(joinAlias.room_alias)">
-                            Join
-                        </button>
-                    </form>
-                </div>
-                <div class="home_controls">
-                    <p>
+                <div class="row">
+                    <div class="col-md-4" id="user-ids">
+                        <h2 id="user-displayname">{{ profile.displayName }}</h2>
+                        <div>{{ config.user_id }}</div>
+                    </div>
+                    <div class="col-md-4">
                         <button class="btn btn-primary" ng-click="showCreateRoomDialog()">
                             Create Room
                         </button>
-                    </p>
+                    </div>
                 </div>
+            </div>
+            <div class="row">
+            <div class="col-md-3">
+                <form>
+                    <div class="form-group">
+                        <label for="newChat_user">
+                            Start a Private Chat
+                        </label>
+                        <input class="form-control input-sm" id="newChat_user" size="40" ng-model="newChat.user" ng-enter="messageUser()" placeholder="e.g. @user:domain.com"/>
+                        <button class="btn btn-primary" ng-disabled="!newChat.user" ng-click="messageUser()">
+                            Start
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <form>
+                    <div class="form-group">
+                        <label for="joinAlias_room_alias">
+                            Join a Room
+                        </label>
+                        <input class="form-control input-sm" size="40" id="joinAlias_room_alias" ng-model="joinAlias.room_alias" ng-enter="joinAlias(joinAlias.room_alias)" placeholder="e.g. #foo:example.org"/>
+                        <button class="btn btn-primary" ng-disabled="!joinAlias.room_alias" ng-click="joinAlias(joinAlias.room_alias)">
+                            Join
+                        </button>
+                    </div>
+                </form>
                 <div class="feedback">{{ feedback }}</div>
+            </div>
             </div>
         </div>
         <hr>

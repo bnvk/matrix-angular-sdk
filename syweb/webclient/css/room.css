@@ -1,22 +1,61 @@
 /*** Room page ***/
 
-.room { 
+.room-left {
+    -webkit-box-ordinal-group: 1;
+    -moz-box-ordinal-group: 1;
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+    width: 320px;
+    display: block;
 }
 
-#sidebar-resizer {
+.room-middle {
+    -webkit-box-ordinal-group: 2;
+    -moz-box-ordinal-group: 2;
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+    min-width: 320px;
+    width: 100%;
+    max-width: 785px;
+}
+
+.room-right {
+    -webkit-box-ordinal-group: 3;
+    -moz-box-ordinal-group: 3;
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+    width: 175px;
+    display: block;
+    text-align: center;
+}
+
+.room-overflow {
+    min-height: 300px;
+    overflow-y: auto;
+}
+
+#roomHeader {
+    max-width: 1280px;
     position: absolute;
-    background-color: #fff;
-    height: 100%;
-    left: 320px;
-    width: 10px;
-    border-right: 1px solid #ccc;
-    cursor: e-resize;
+    top: 50px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    padding: 0px 20px 0px 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
 #roomPage {
     position: absolute;
-    top: 120px;
-    bottom: 70px;
+    top: 130px;
+    bottom: 0px;
     left: 20px;
     right: 20px;
 }
@@ -26,156 +65,53 @@
     margin: auto;
     max-width: 1280px;
     height: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }
 
 
-#roomHeader {
-    margin: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 53px;
-    max-width: 1280px;
-}
+/*** Room - Recents ***/
 
-#controlPanel {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 60px;
-    background-color: #f8f8f8;
-    border-top: #aaa 1px solid;
-}
-
-#controls {
-    max-width: 1280px;
-    padding: 12px;
-    padding-right: 42px;
-    margin: auto;
-    position: relative;
-}
-
-#buttonsCell {
-    width: 150px;
-}
-
-#inputBarTable {
-    width: 100%;
-}
-
-#inputBarTable tr td {
-    padding: 1px 4px;
-}
-
-#mainInput {
-    width: 100%;
-    padding: 5px;
-    resize: vertical;
-}
-
-#attachButton {
-    position: absolute;
-    cursor: pointer;
-    margin-top: 3px;
-    right: 0px;
-    background: url('../img/attach.png');
-    width: 25px;
-    height: 25px;
-    border: 0px;
-}
-
-.blink {
-    background-color: #faa;
-}
-
-.roomHighlight {
-    font-weight: bold;
-    background-color: #ffd;
-}
-
-.publicRoomSpinner {
-    max-width: 480px;
-    padding: 20px;
-}
-
-ol.publicRooms {
-    width: 100%;
-    list-style: none;
-    margin-left: 0px;
-    padding: 0px;
-    vertical-align: text-top;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-li.publicRoomEntry {
-    padding: 5px 8px;
-}
-
-li.publicRoomEntry:hover {
-    background: #d9d9d9;
-}
-
-a.publicRoomEntry {
-    width: 100%;
+#roomRecentsTableWrapper {
     height: 100%;
-    display: block;
-    text-decoration: none;
+    overflow-y: auto;
+    padding-right: 10px;
+    border-right: 1px solid #aaa;
 }
 
-span.publicRoomJoinedUsers {
-    width: 5em;
-    text-align: right;
-    font-size: 12px;
+#roomMembers {
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+/*** Room - Title & Topic **/
+
+.roomTitle {
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+.roomTitle h2 {
+    margin-bottom: 0px;
+}
+
+.roomTitleSub {
     color: #888;
+	font-weight: normal;
+	font-size: 14px;
 }
 
-span.publicRoomTopic {
-    color: #888;
-    font-size: 12px;
-    font-weight: normal;
-    text-decoration: none;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding-bottom: 5px;
-}
-
-#roomName {
-    font-size: 18px;
-    text-align: left;
-}
-
-#roomTopic {
-    font-size: 13px;
-    text-align: right;
-}
-
-.roomNameInput, .roomTopicInput {
+.roomNameInput,
+.roomTopicInput {
     width: 100%;
 }
 
-.roomNameSection, .roomTopicSection {
-    text-align: left;
-    float: right;
-    width: 100%;
-	font-weight: bold;
-	font-size: 18px;
-}
 
-.roomNameSetNew, .roomTopicSetNew {
-    float: right;
-}
-
-.roomHeaderInfo {
-    text-align: left;
-    float: right;
-    margin-top: 0px;
-    margin-right: 30px;
-}
-
-
-/*** Room Info Dialog ***/
+/*** Room - Info Dialog ***/
 
 .room-info {
     border-collapse: collapse;
@@ -211,112 +147,85 @@ span.publicRoomTopic {
 }
 
 
-/*** Control Buttons ***/
-
-#controlButtons {
-    float: right;
-    margin-right: -4px;
-    padding-bottom: 6px;
-}
+/*** Room - Control Buttons ***/
 
 .controlButton {
     cursor: pointer;
     border: 0px;
     width: 30px;
     height: 30px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin: 25px 10px 0px 10px;
 }
 
-/*** Participant list ***/
-
-#usersTableWrapper {
-    float: right;
-    clear: right;
-    width: 101px;
-    height: 100%;
-    overflow-y: auto;
+#controlPanel {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    max-width: 785px;
+    height: 60px;
+    background-color: #f8f8f8;
+    border-top: #aaa 1px solid;
+    border-right: #aaa 1px solid;
 }
 
-.userAvatar {
-}
-
-.userAvatarFrame {
-    border-radius: 46px;
-    width: 80px;
+#controls {
+    max-width: 1000px;
+    padding: 12px;
+    padding-right: 42px;
     margin: auto;
     position: relative;
-    border: 3px solid #aaa;
-    background-color: #aaa;
 }
 
-.userAvatarImage {
-    border-radius: 40px;
-    text-align: center;
-    object-fit: cover;
-    display: block;
+#buttonsCell {
+    width: 150px;
 }
 
-.userName {
+#inputBarTable {
+    width: 100%;
+}
+
+#inputBarTable tr td {
+    padding: 1px 4px;
+}
+
+#mainInput {
+    width: 98%;
+    padding: 5px;
+    resize: vertical;
+}
+
+#attachButton {
+    position: absolute;
+    cursor: pointer;
     margin-top: 3px;
-    margin-bottom: 6px;
-    text-align: center;
-    font-size: 12px;
-    word-wrap: break-word;
-}
-
-.userPowerLevel {
-    position: absolute;
-    bottom: -1px;
-    height: 1px;
-    background-color: #f00;
-}
-
-.userPowerLevelBar {
-    display: inline;
-    position: absolute;
-    width: 2px;
-    height: 10px;
-    background-color: #aaa;
-}
-
-.userPowerLevelMeter {
-    position: relative;
-    bottom: 0px;
-    background-color: #f00;
-}
-
-.typingIcon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-}
-
-.online {
-    border-color: #38AF00;
-    background-color: #38AF00;
-}
-
-.unavailable {
-    border-color: #FFCC00;
-    background-color: #FFCC00;
+    margin-right: 15px;
+    right: 0px;
+    background: url('../img/attach.png');
+    width: 25px;
+    height: 25px;
+    border: 0px;
 }
 
 
-/*** Message table ***/
+/*** Room - Messages ***/
+
+#roomMessages {
+    width: 100%;
+    max-width: 785px;
+    height: 100%;
+    position: relative;    
+}
 
 #messageTableWrapper {
-    height: 100%;
-    margin-right: 140px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    bottom: 70px;
     overflow-y: auto;
-    width: auto;
 }
 
 #messageTable {
     margin: auto;
-    max-width: 1280px;
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
@@ -436,7 +345,7 @@ span.publicRoomTopic {
 }
 
 .differentUser .msg {
-    padding-top: 14px ! important;
+    padding-top: 10px !important;
 }
 
 .msg_meta {
@@ -449,7 +358,7 @@ span.publicRoomTopic {
 }
 
 .mine .text .bubble {
-    text-align: left ! important;
+    text-align: left !important;
 }
 
 .bubble .message {
@@ -474,6 +383,77 @@ span.publicRoomTopic {
 .avatarNotice {
     opacity: 0.5;
 }
+
+
+
+/*** Room - Participant list ***/
+
+.userAvatarFrame {
+    border-radius: 46px;
+    width: 80px;
+    margin: auto;
+    position: relative;
+    border: 3px solid #aaa;
+    background-color: #aaa;
+}
+
+.userAvatarImage {
+    border-radius: 40px;
+    text-align: center;
+    object-fit: cover;
+    display: block;
+}
+
+.userName {
+    margin-top: 3px;
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+.userPowerLevel {
+    position: absolute;
+    bottom: -1px;
+    height: 1px;
+    background-color: #f00;
+}
+
+.userPowerLevelBar {
+    display: inline;
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #aaa;
+}
+
+.userPowerLevelMeter {
+    position: relative;
+    bottom: 0px;
+    background-color: #f00;
+}
+
+.typingIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.online {
+    border-color: #38AF00;
+    background-color: #38AF00;
+}
+
+.unavailable {
+    border-color: #FFCC00;
+    background-color: #FFCC00;
+}
+
+
+
+/*** Room - Embeded Media ***/
 
 #room-fullscreen-image {
     position: absolute;
@@ -505,15 +485,3 @@ span.publicRoomTopic {
     width: 0em;
 }
 
-
-/*** Recents in the room page ***/
-
-#roomRecentsTableWrapper {
-    float: left;
-    max-width: 320px;
-    padding-right: 10px;
-    margin-right: 10px;
-    height: 100%;
-/*    border-right: 1px solid #ddd; */
-    overflow-y: auto;
-}
